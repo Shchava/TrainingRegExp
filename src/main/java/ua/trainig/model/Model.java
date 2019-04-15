@@ -7,7 +7,7 @@ import java.util.Map;
 import java.util.Set;
 
 public class Model {
-    Map<String,NoteBook> noteBookMap = new HashMap<String, NoteBook>();
+    private Map<String,NoteBook> noteBookMap = new HashMap<String, NoteBook>();
 
     public Model(){
     }
