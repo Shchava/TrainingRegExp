@@ -1,11 +1,11 @@
 package ua.trainig.model;
 
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Model {
-    List<NoteBook> noteBookList = new ArrayList<NoteBook>();
+    Set<NoteBook> noteBookList = new HashSet<NoteBook>();
 
     public Model(){
     }
