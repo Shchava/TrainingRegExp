@@ -24,5 +24,16 @@ public class NoteBook {
         return login;
     }
 
+    @Override
+    public int hashCode() {
+        return login.hashCode();
+    }
 
+    @Override
+    public boolean equals(Object el) {
+        if(!(el instanceof NoteBook)){
+            return false;
+        }
+        return ((NoteBook) el).login.equals(login);
+    }
 }

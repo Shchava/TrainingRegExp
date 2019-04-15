@@ -18,9 +18,15 @@ public class Controller {
         scanner = new Scanner(System.in);
     }
 
+    public Controller(View view,Model model,Scanner input){
+        this.view = view;
+        this.model = model;
+        scanner = input;
+    }
+
     public void process(){
         inputNoteBook input = new inputNoteBook(scanner,view);
-        for(int i = 0; i < 10; i++) {
+        for(int i = 0; i < 1; i++) {
             model.addNoteBook(input.readNoteBook());
         }
     }

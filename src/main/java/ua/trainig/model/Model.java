@@ -1,16 +1,20 @@
 package ua.trainig.model;
 
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Model {
-    List<NoteBook> noteBookList = new ArrayList<NoteBook>();
+    private Map<String,NoteBook> noteBookMap = new HashMap<String, NoteBook>();
 
     public Model(){
     }
 
     public void addNoteBook(NoteBook book){
-        noteBookList.add(book);
+        noteBookMap.put(book.getLogin(),book);
+    }
+
+    public NoteBook getNoteBook(String login){
+        return noteBookMap.get(login);
     }
 }
