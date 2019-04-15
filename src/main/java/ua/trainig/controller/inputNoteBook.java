@@ -38,7 +38,7 @@ public class inputNoteBook {
     private String readValue(String value, String format){
         String res = "";
         view.printInputInvitation(value);
-        while (! (sc.hasNextLine()&&(res = sc.nextLine()).matches(format))){
+        while (! (sc.hasNextLine()&&(res = sc.nextLine()).trim().matches(format))){
             view.printWrongInput(value,format);
         }
         return res;
