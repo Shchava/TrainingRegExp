@@ -18,9 +18,9 @@ public class TestController {
     Controller testController;
 
     String TestInputData = "login\nІмя\nПрізвище";
-    String untrimmedTestInputLogin = "login  \n  Імя  \n   Прізвище";
+    String untrimmedTestInputLogin = "login  \n  Імя  \n   Прізвище \n login  \n  Імя  \n   Прізвище ";
     String inputDataWithWrongNames = "login  \n  Імя'  \n Ім''' \n Імыыы  \n імя \n \n Імя \n   Прізвище";
-    String doubleLoginInput = "login  \n  Імя  \n   Прізвище \n login  \n login2 \n  Імя  \n   Прізвище";
+    String doubleLoginInput = "login  \n  Імя  \n   Прізвище \n login \n  Імяі  \n   Прізвищеі \n login2 ";
 
     @Test
     void TestInput(){
@@ -60,11 +60,12 @@ public class TestController {
     }
     @Test
     void testDoubleLogin(){
+        System.out.println("ffff");
         Scanner testScanner = new Scanner(doubleLoginInput);
         testController = new Controller(testView,testModel,testScanner);
 
         testController.process();
-
+        testController.process();
 
         NoteBook inserted =  testModel.getNoteBook("login");
         NoteBook inserted2 =  testModel.getNoteBook("login2");
@@ -75,9 +76,9 @@ public class TestController {
         assertEquals("Імя", inserted.getName());
         assertEquals("Прізвище", inserted.getSurName());
 
-        assertEquals("login", inserted2.getLogin());
-        assertEquals("Імя", inserted2.getName());
-        assertEquals("Прізвище", inserted2.getSurName());
+        assertEquals("login2", inserted2.getLogin());
+        assertEquals("Імяі", inserted2.getName());
+        assertEquals("Прізвищеі", inserted2.getSurName());
 
 
     }
