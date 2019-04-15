@@ -12,6 +12,8 @@ public class TestInputNoteBook {
     String testInputLogin = "login\nІмя\nПрізвище";
     String untrimmedTestInputLogin = "login  \n  Імя  \n   Прізвище";
     String inputDataWithWrongNames = "login  \n  Імя'  \n Ім''' \n Імыыы  \n імя \n \n Імя \n   Прізвище";
+    String doubleLoginInput = "login  \n  Імя  \n   Прізвище \n login  \n  Імя  \n   Прізвище";
+
 
     @Test
     void testLoginInput(){
@@ -39,5 +41,17 @@ public class TestInputNoteBook {
         assertEquals("Імя", resp.getName());
         assertEquals("Прізвище", resp.getSurName());
     }
+    @Test
+    void testDoubleLoginInput(){
+        inputNoteBook testNoteBook = new inputNoteBook(new Scanner(doubleLoginInput),testView);
+        NoteBook resp =   testNoteBook.readNoteBook();
+        NoteBook resp2 =  testNoteBook.readNoteBook();
+        assertEquals("login", resp.getLogin());
+        assertEquals("Імя", resp.getName());
+        assertEquals("Прізвище", resp.getSurName());
 
+        assertEquals("login", resp2.getLogin());
+        assertEquals("Імя", resp2.getName());
+        assertEquals("Прізвище", resp2.getSurName());
+    }
 }
