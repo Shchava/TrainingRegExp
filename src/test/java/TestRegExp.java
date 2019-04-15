@@ -1,11 +1,11 @@
-package ua.trainig.controller;
-
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+import ua.trainig.controller.RegExpressions;
 
-public class TestRegExp {
+import static org.junit.jupiter.api.Assertions.*;
+@DisplayName("Tests for Regular Expressions")
+public class TestRegExp{
     @Nested
     @DisplayName("Tests for surname")
     class surnameTests {
