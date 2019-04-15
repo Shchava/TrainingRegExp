@@ -24,5 +24,9 @@ public class NoteBook {
         return login;
     }
 
+    @Override
+    public int hashCode() {
+        return login.hashCode();
+    }
 
 }
