@@ -29,4 +29,11 @@ public class NoteBook {
         return login.hashCode();
     }
 
+    @Override
+    public boolean equals(Object el) {
+        if(!(el instanceof NoteBook)){
+            return false;
+        }
+        return ((NoteBook) el).login.equals(login);
+    }
 }
