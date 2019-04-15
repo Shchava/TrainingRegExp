@@ -16,6 +16,7 @@ public class TestController {
 
     String TestInputData = "login\nІмя\nПрізвище";
     String untrimmedTestInputLogin = "login  \n  Імя  \n   Прізвище";
+    String inputDataWithWrongNames = "login  \n  Імя'  \n Ім''' \n Імыыы  \n імя \n \n Імя \n   Прізвище";
 
 
     @Test
@@ -34,6 +35,18 @@ public class TestController {
     @Test
     void testInputWithSpaces(){
         testController = new Controller(testView,testModel,new Scanner(untrimmedTestInputLogin));
+        testController.process();
+
+        NoteBook inserted =  testModel.getNoteBook("login");
+
+        assertEquals("login", inserted.getLogin());
+        assertEquals("Імя", inserted.getName());
+        assertEquals("Прізвище", inserted.getSurName());
+    }
+
+    @Test
+    void testInputWithErrors(){
+        testController = new Controller(testView,testModel,new Scanner(inputDataWithWrongNames));
         testController.process();
 
         NoteBook inserted =  testModel.getNoteBook("login");
