@@ -132,6 +132,7 @@ public class TestRegExp{
         String wrongNicknameWithSymbols2 = "_Ab-cd__efg---hi_jk-l";
         String nicknameWithNumbers = "1Ab-cd0__e11fg---h10i_j6k-l9";
         String cyrillicNickname = "Аабвгдж";
+        String nicknameWithSpaces = "   abcdefghijklmnopqrstuvwxyz   ";
 
 
         @Test
@@ -151,6 +152,10 @@ public class TestRegExp{
         @Test
         void nicknameWithCyrillic() {
             assertFalse(cyrillicNickname.matches(RegExpressions.LOGIN));
+        }
+        @Test
+        void nicknameWithSpaces() {
+            assertFalse(nicknameWithSpaces.matches(RegExpressions.LOGIN));
         }
 
     }
