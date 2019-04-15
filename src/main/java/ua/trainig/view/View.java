@@ -6,7 +6,7 @@ import java.util.ResourceBundle;
 public class View {
 
     static final String MESSAGES_BUNDLE_NAME = "messages";
-    public static final ResourceBundle messagesBundle = ResourceBundle.getBundle(MESSAGES_BUNDLE_NAME, new Locale("ua", "UA"));
+    public final ResourceBundle messagesBundle = ResourceBundle.getBundle(MESSAGES_BUNDLE_NAME, new Locale("ua", "UA"));
 
     public View(){
     }
