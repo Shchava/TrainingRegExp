@@ -28,7 +28,6 @@ public class TestInputNoteBook {
         assertEquals("login", resp.getLogin());
         assertEquals("Імя", resp.getName());
         assertEquals("Прізвище", resp.getSurName());
-
     }
 
 }
