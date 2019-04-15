@@ -1,12 +1,14 @@
 package ua.trainig.view;
 
-
-import ua.trainig.model.Model;
+import java.util.Locale;
+import java.util.ResourceBundle;
 
 public class View {
 
-    public View(){
+    static final String MESSAGES_BUNDLE_NAME = "messages";
+    public static final ResourceBundle messagesBundle = ResourceBundle.getBundle(MESSAGES_BUNDLE_NAME, new Locale("ua", "UA"));
 
+    public View(){
     }
 
     public void print(String message){
@@ -14,10 +16,10 @@ public class View {
     }
 
     public void printInputInvitation(String value){
-        print(String.format(TextConstants.INPUTINVITATION,value));
+        print(String.format(messagesBundle.getString("input.invitation"),value));
     };
 
     public void printWrongInput(String value, String format){
-        print(String.format(TextConstants.WRONGINPUT,value,format));
+        print(String.format(messagesBundle.getString("input.wrong"),value,format));
     }
 }
