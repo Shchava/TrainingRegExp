@@ -1,7 +1,6 @@
 package ua.trainig.controller;
 
 import ua.trainig.model.NoteBook;
-import ua.trainig.view.TextConstants;
 import ua.trainig.view.View;
 
 import java.util.Scanner;
@@ -14,7 +13,7 @@ public class inputNoteBook {
         this.view =  view;
     }
     public NoteBook readNoteBook () {
-        view.printInputInvitation(TextConstants.NOTEBOOK);
+        view.printInputInvitation(view.messagesBundle.getString("NOTEBOOK"));
 
         String login = readLogin();
         String name = readName();
@@ -24,15 +23,15 @@ public class inputNoteBook {
     }
 
     private String readLogin(){
-        return readValue(TextConstants.LOGIN,RegExpressions.LOGIN);
+        return readValue(view.messagesBundle.getString("LOGIN"),RegExpressions.LOGIN);
     }
 
     private String readName(){
-        return readValue(TextConstants.NAME,RegExpressions.NAME_UA);
+        return readValue(view.messagesBundle.getString("NAME"),RegExpressions.NAME_UA);
     }
 
     private String readSurname(){
-        return readValue(TextConstants.SURNAME,RegExpressions.SURNAME_UA);
+        return readValue(view.messagesBundle.getString("SURNAME"),RegExpressions.SURNAME_UA);
     }
 
     private String readValue(String value, String format){
