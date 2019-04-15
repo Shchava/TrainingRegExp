@@ -15,4 +15,8 @@ public class Model {
     public void addNoteBook(NoteBook book){
         noteBookMap.put(book.getLogin(),book);
     }
+
+    public NoteBook getNoteBook(String login){
+        return noteBookMap.get(login);
+    }
 }
