@@ -42,4 +42,10 @@ public class inputNoteBook {
         }
         return res;
     }
+
+    public NoteBook reReadLogin(NoteBook repeated){
+        view.printLoginExists(repeated.getLogin());
+        String newLogin = readLogin();
+        return new NoteBook(newLogin,repeated.getName(),repeated.getSurName());
+    }
 }

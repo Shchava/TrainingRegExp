@@ -22,4 +22,8 @@ public class View {
     public void printWrongInput(String value, String format){
         print(String.format(messagesBundle.getString("input.wrong"),value,format));
     }
+
+    public void printLoginExists(String login){
+        print(String.format(messagesBundle.getString("input.login.exists"),login));
+    }
 }
