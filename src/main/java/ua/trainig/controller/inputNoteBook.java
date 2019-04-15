@@ -7,8 +7,8 @@ import ua.trainig.view.View;
 import java.util.Scanner;
 
 public class inputNoteBook {
-    Scanner sc;
-    View view;
+    private Scanner sc;
+    private View view;
     public inputNoteBook(Scanner scanner, View view) {
         sc = scanner;
         this.view =  view;
@@ -36,7 +36,7 @@ public class inputNoteBook {
     }
 
     private String readValue(String value, String format){
-        String res = "";
+        String res;
         view.printInputInvitation(value);
         while (! (sc.hasNextLine()&&(res = (sc.nextLine()).trim()).matches(format))){
             view.printWrongInput(value,format);
